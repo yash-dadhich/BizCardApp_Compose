@@ -55,15 +55,9 @@ import com.example.bizcard.ui.theme.BizCardTheme
 
 class MainActivity : ComponentActivity() {
 
-    val colors = arrayOf(
-        Color("#FFFFFF"),
-        Color("#000000"),
-        Color("#FF8F00"),
-        Color("#EF6C00"),
-        Color("#D84315"),
-        Color("#37474F"),
-        //...more
-    )
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -71,6 +65,7 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
                     Greeting("Android")
+
                 }
             }
         }
@@ -167,6 +162,15 @@ private fun listItem(){
 
 @Composable
 fun Portfolio(data: List<String>) {
+    val colors = arrayOf(
+        Color.Red,
+        Color.Black,
+        Color.Green,
+        Color.Yellow,
+        Color.Cyan,
+        Color.Magenta,
+        //...more
+    )
    LazyColumn{
        items(data){ item ->
 //            Text(text = item)
@@ -202,8 +206,8 @@ fun Portfolio(data: List<String>) {
                    Row(modifier = Modifier.size(30.dp),Arrangement.End,Alignment.Top) {
                        Surface(modifier = Modifier
                            .height(20.dp)
-                           .width(25.dp), color = Color.Black,
-                       shape = RoundedCornerShape(0.dp,0.dp,0.dp,10.dp)
+                           .width(25.dp), color = colors.random(),
+                       shape = RoundedCornerShape(0.dp,0.dp,0.dp,5.dp),
                        ) {
                            Text(text = "")
                        }
